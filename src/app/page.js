@@ -15,10 +15,17 @@ const Home = async () => {
     <main>
       <div>
         <h1>Popular Anime</h1>
-        {anime.data.map(data => {
-          // console.log(data.title);
-          return <AnimeList title={data.title} images={data.images.webp.image_url} /> //get title & image
-        })}
+        <div className="grid grid-cols-4 gap-4">
+          {anime.data.map((data) => {
+            // console.log(data.title);
+            return (
+              <AnimeList
+                title={data.title}
+                images={data.images.webp.image_url}
+              />
+            ); //get title & image
+          })}
+        </div>
       </div>
     </main>
   );
