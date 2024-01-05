@@ -15,14 +15,18 @@ const Home = async () => {
     <main>
       <div>
         <h1>Popular Anime</h1>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
           {anime.data.map((data) => {
             // console.log(data.title);
             return (
-              <AnimeList
-                title={data.title}
-                images={data.images.webp.image_url}
-              />
+              //key mal id = id from my anime list
+              <div key={data.mal_id} className="shadow-xl">
+                <AnimeList
+                  title={data.title}
+                  images={data.images.webp.image_url}
+                  id={data.mal_id}
+                />
+              </div>
             ); //get title & image
           })}
         </div>
