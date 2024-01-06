@@ -23,3 +23,7 @@ img {
 img:hover {
   scale: 102%;
 }
+
+.search-input{
+  width: 80%;
+}
